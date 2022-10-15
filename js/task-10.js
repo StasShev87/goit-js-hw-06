@@ -9,6 +9,14 @@ const destroyBtn = controls.querySelector("button[data-destroy]");
 
 createBtn.addEventListener("click", () => {
   const boxesCountValue = Number(boxesCount.value);
+  const minValue = Number(boxesCount.min);
+  const maxValue = Number(boxesCount.max);
+  if (boxesCountValue < minValue) {
+    return;
+  }
+  if (boxesCountValue > maxValue) {
+    return;
+  }
   createBoxes(boxesCountValue);
 });
 
